@@ -11,6 +11,7 @@ use Laminas\Diactoros\Response\RedirectResponse;
 use Laminas\Diactoros\Response\TextResponse;
 use Psr\Http\Message\ServerRequestInterface;
 
+
 function app(string $class = null) {
     $app = Application::instance();
 
@@ -37,7 +38,7 @@ function request(string $key = null) {
 
     $data = array_merge(
         $request->getQueryParams(),
-        $request->getParsedBody()
+        $request->getParsedBody(),
     );
 
     return $data[$key] ?? null;
@@ -71,6 +72,3 @@ function view($view, array $vars = []) {
 
     return new HtmlResponse($result);
 }
-
-
-

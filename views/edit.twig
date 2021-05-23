@@ -8,10 +8,10 @@
     <title>Новая книга</title>
 </head>
 <body>
-    <h1>Новая книга</h1>
-    <form action="/create" method="post">
-        <input type="text" name="name" placeholder="Название книги...">
-        <button>Добавить</button>
-    </form>
+<h1>Новая книга</h1>
+<form action="/update/{{ book.id }}" method="put">
+    <input type="text" name="name" placeholder="Название книги..." value="{{ book.name }}">
+    <button>Обновить</button>
+</form>
 </body>
 </html>

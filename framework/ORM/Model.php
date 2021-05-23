@@ -5,6 +5,7 @@ namespace Framework\ORM;
 
 use Doctrine\ORM\EntityManager;
 use Framework\Providers\DatabaseProvider;
+use Framework\Providers\ViewProvider;
 
 class Model {
     static function query() {
@@ -18,6 +19,14 @@ class Model {
         $manager = app(DatabaseProvider::class)->manager();
 
         $manager->persist($this);
+        $manager->flush();
+    }
+
+    function delete() {
+        /** @var EntityManager $manager */
+        $manager = app(DatabaseProvider::class)->manager();
+
+        $manager->remove($this);
         $manager->flush();
     }
 }

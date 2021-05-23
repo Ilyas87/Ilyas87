@@ -11,7 +11,8 @@
         "laminas/laminas-httphandlerrunner": "^1.3",
         "league/route": "^5.0",
         "twig/twig": "^3.3",
-        "doctrine/orm": "^2.8"
+        "doctrine/orm": "^2.8",
+        "symfony/yaml": "2.*"
     },
     "autoload": {
         "psr-4": {

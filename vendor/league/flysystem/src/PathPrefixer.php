@@ -24,7 +24,7 @@ final class PathPrefixer
     {
         $this->prefix = rtrim($prefix, '\\/');
 
-        if ($prefix !== '') {
+        if ($this->prefix !== '' || $prefix === $separator) {
             $this->prefix .= $separator;
         }
 
